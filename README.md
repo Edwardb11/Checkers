@@ -1,1 +1,2 @@
-# Draughts-game
+## En qué consiste el juego. :computer: :video_game:
+ *El juego consiste en mover las piezas en diagonal a través de los cuadros negros de un tablero de ajedrez con la intención de capturar (comer) las piezas del contrario saltando por encima de ellas.* 
