@@ -1,2 +1,2 @@
-## En qué consiste el juego. :computer: :video_game:
- *El juego consiste en mover las piezas en diagonal a través de los cuadros negros de un tablero de ajedrez con la intención de capturar (comer) las piezas del contrario saltando por encima de ellas.* 
+## Whats the game about. :computer: :video_game:
+ *The game consists of moving the pieces diagonally across the black squares of a chessboard with the intention of capturing (eating) the opponent's pieces by jumping on them.* 
