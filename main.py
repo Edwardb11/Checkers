@@ -5,8 +5,7 @@ class App(tk.Tk):
         self.canvas = tk.Canvas( self, width=640, height=640, borderwidth=0, highlightthickness=0)
         self.canvas.pack(side="top", fill="both", expand="true")
         self.Game = Game()
-        self.rows = 8
-        self.columns = 8
+        self.dimensions = 8
 #         self.tiles = {}
         self.canvas.bind("<Configure>", self.redraw)
         self.status = tk.Label(self, anchor="w")
@@ -15,8 +14,8 @@ class App(tk.Tk):
 
     def redraw(self, event=None):
         self.canvas.delete("rect")
-        cellwidth = int(self.canvas.winfo_width()/self.columns)
-        cellheight = int(self.canvas.winfo_height()/self.columns)
+        cellwidth = int(self.canvas.winfo_width()/self.dimensions)
+        cellheight = int(self.canvas.winfo_height()/self.dimensions)
         for row, row_tiles in enumerate(self.Game.Board):
             for column, tile in enumerate(row_tiles):
                 x1 = column*cellwidth
