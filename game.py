@@ -5,5 +5,5 @@ from main import *
 from board import *
 
 app = App()
-app.resizable(0,0)
+app.resizable(0, 0)
 app.mainloop()
