@@ -16,5 +16,4 @@ class Tile():
         return toRemove
     
     def isOccupied(self):
-        return self.piece != None
-            
+        return self.piece != None    
