@@ -6,8 +6,7 @@ class Piece():
         self.isKing = False
 
     def promote(self):
-        self.isKing |= True
-        
+        self.isKing |= True       
 # | = performs an in-place + operation between pairs of objects. In particular, between:
      #joints: a union operation
      #dicta: an update operation

@@ -6,7 +6,6 @@ class Tile():
         self.color = color
         self.gui_tile = None
         
-    
     def addPiece(self, piece):
         self.piece = piece
         
