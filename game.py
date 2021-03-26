@@ -1,7 +1,7 @@
 import tkinter as tk
 from piece import *
 from tile import *
-from Appp import *
+from main import *
 from board import *
 
 app = App()
