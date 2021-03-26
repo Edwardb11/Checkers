@@ -1,11 +1,8 @@
 from board import *
-
-
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        self.canvas = tk.Canvas(
-            self, width=640, height=640, borderwidth=0, highlightthickness=0)
+        self.canvas = tk.Canvas( self, width=640, height=640, borderwidth=0, highlightthickness=0)
         self.canvas.pack(side="top", fill="both", expand="true")
         self.Game = Game()
         self.rows = 8
