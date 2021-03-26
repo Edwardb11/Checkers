@@ -1,4 +1,3 @@
-
 class Tile():
     def __init__(self, row, column, color):
         self.row = row
@@ -6,6 +5,7 @@ class Tile():
         self.piece = None
         self.color = color
         self.gui_tile = None
+        
     
     def addPiece(self, piece):
         self.piece = piece
@@ -17,4 +17,4 @@ class Tile():
     
     def isOccupied(self):
         return self.piece != None
-tile_colors = ['white', 'black']    
+            
