@@ -8,8 +8,8 @@ class Piece():
     def promote(self):
         self.isKing |= True
         
-        #|=realiza una operación + in situ entre pares de objetos. En particular, entre:
-    #conjuntos : una operación sindical
-    #dicta : una operación de actualización
-    #contadores : una operación de unión (de multijuegos)
-    #números : un OR bit a bit , operación binaria
+# | = performs an in-place + operation between pairs of objects. In particular, between:
+      #joints: a union operation
+      #dicta: an update operation
+      #counters: a join operation (multigame)
+      # numbers: a bitwise OR, binary operation
