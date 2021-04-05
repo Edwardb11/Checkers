@@ -1,11 +1,15 @@
 from board import *
+
+
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        self.canvas = tk.Canvas( self, width=640, height=640, borderwidth=0, highlightthickness=0)
+        self.canvas = tk.Canvas(
+            self, width=640, height=640, borderwidth=0, highlightthickness=0)
         self.canvas.pack(side="top", fill="both", expand="true")
         self.Game = Game()
-        self.dimensions = 8
+        self.row = 8
+        self.column = 8
 #         self.tiles = {}
         self.canvas.bind("<Configure>", self.redraw)
         self.status = tk.Label(self, anchor="w")
@@ -14,8 +18,8 @@ class App(tk.Tk):
 
     def redraw(self, event=None):
         self.canvas.delete("rect")
-        cellwidth = int(self.canvas.winfo_width()/self.dimensions)
-        cellheight = int(self.canvas.winfo_height()/self.dimensions)
+        cellwidth = int(self.canvas.winfo_width()/self.column)
+        cellheight = int(self.canvas.winfo_height()/self.column)
         for row, row_tiles in enumerate(self.Game.Board):
             for column, tile in enumerate(row_tiles):
                 x1 = column*cellwidth
@@ -37,3 +41,19 @@ class App(tk.Tk):
                             oval, "<1>", lambda event, row=row, column=column: self.clicked(row, column))
                 self.canvas.tag_bind(tile.gui_tile, "<1>", lambda event,
                                      row=row, column=column: self.clicked(row, column))
+
+    def clicked(self, row, column):
+        tile = self.Game.Board[row][column].gui_tile
+        tile_color = self.canvas.itemcget(tile, "fill")
+        if self.Game.isSelected():
+            selected_tile = self.Game.Board[self.Game.selected[0]
+                                            ][self.Game.selected[1]]
+            self.Game.move(row, column)
+            self.canvas.itemconfigure(
+                selected_tile.gui_tile, fill=selected_tile.color)
+            self.redraw()
+        else:
+            new_color = "green" if self.Game.select(
+                row, column) else self.Game.Board[row][column].color
+            self.canvas.itemconfigure(tile, fill=new_color)
+        self.status.configure(text="you clicked on %s/%s" % (row, column))
