@@ -12,3 +12,4 @@ class Piece():
      #dicta: an update operation
      #counters: a join operation (multigame)
      # numbers: a bitwise OR, binary operation
+
