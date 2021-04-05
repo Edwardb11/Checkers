@@ -6,10 +6,10 @@ class Piece():
         self.isKing = False
 
     def promote(self):
-        self.isKing |= True
-        
-# | = performs an in-place + operation between pairs of objects. In particular, between:
-      #joints: a union operation
-      #dicta: an update operation
-      #counters: a join operation (multigame)
-      # numbers: a bitwise OR, binary operation
+        self.isKing |= True       
+      # | = performs an in-place + operation between pairs of objects. In particular, between:
+     #joints: a union operation
+     #dicta: an update operation
+     #counters: a join operation (multigame)
+     # numbers: a bitwise OR, binary operation
+
