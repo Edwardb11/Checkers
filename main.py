@@ -15,7 +15,8 @@ class App(tk.Tk):
         self.status = tk.Label(self, anchor="w")
         self.status.pack(side="bottom", fill="x")
         #self.tile_colors = ['white', 'black']
-
+        
+    #draw tiles board
     def redraw(self, event=None):
         self.canvas.delete("rect")
         cellwidth = int(self.canvas.winfo_width()/self.column)
@@ -41,14 +42,14 @@ class App(tk.Tk):
                             oval, "<1>", lambda event, row=row, column=column: self.clicked(row, column))
                 self.canvas.tag_bind(tile.gui_tile, "<1>", lambda event,
                                      row=row, column=column: self.clicked(row, column))
-
+    #click method
     def clicked(self, row, column):
         tile = self.Game.Board[row][column].gui_tile
         tile_color = self.canvas.itemcget(tile, "fill")
         if self.Game.isSelected():
             selected_tile = self.Game.Board[self.Game.selected[0]
                                             ][self.Game.selected[1]]
-            self.Game.move(row, column)
+            self.Game.move_tile(row, column)
             self.canvas.itemconfigure(
                 selected_tile.gui_tile, fill=selected_tile.color)
             self.redraw()
