@@ -5,5 +5,6 @@ from main import *
 from board import *
 
 app = App()
+app.title("Checkers")
 app.resizable(0, 0)
 app.mainloop()
