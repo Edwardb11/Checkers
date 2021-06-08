@@ -19,7 +19,7 @@ class App(tk.Tk):
     #draw tiles board
     def redraw(self, event=None):
         self.canvas.delete("rect")
-        cellwidth = int(self.canvas.winfo_width()/self.column)
+        cellwidth = int(self.canvas.winfo_width()/self.row)
         cellheight = int(self.canvas.winfo_height()/self.column)
         for row, row_tiles in enumerate(self.Game.Board):
             for column, tile in enumerate(row_tiles):
